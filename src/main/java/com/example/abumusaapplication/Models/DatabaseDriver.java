@@ -7,7 +7,6 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 
 import java.sql.*;
-import java.util.Optional;
 
 public class DatabaseDriver {
 private static  String CONNECTION_STRING="jdbc:sqlite:C:/Users/Home/IdeaProjects/AbuMusaApplication/AbuMusa.db";
@@ -29,8 +28,8 @@ private static  String CONNECTION_STRING="jdbc:sqlite:C:/Users/Home/IdeaProjects
 
         return names;
     }
-    public static ObservableList<Client> getTodaySales(String date){
-        ObservableList<Client> lst=FXCollections.observableArrayList();;
+    public static ObservableList<SoldToday> getTodaySales(String date){
+        ObservableList<SoldToday> lst=FXCollections.observableArrayList();;
         try(Connection connection=DriverManager.getConnection(CONNECTION_STRING);
             PreparedStatement GET_TODAY_ITEMS= connection.prepareStatement("SELECT Clients.id,Clients.name,Clients.client_type,material,bill_number,date,weight_count,piece_price,amount,paid_amount FROM Clients INNER JOIN Client_Items ON Clients.id=Client_Items.id WHERE Client_Items.date =?")){
             GET_TODAY_ITEMS.setString(1,date);
@@ -47,19 +46,13 @@ private static  String CONNECTION_STRING="jdbc:sqlite:C:/Users/Home/IdeaProjects
                 double piecePrice = resultSet.getDouble("piece_price");
                 double amount = resultSet.getDouble("amount");
                 double paidAmount = resultSet.getDouble("paid_amount");
-                Client client;
+
 //                item=new Client(r.getInt("id"),r.getString("name"),r.getString("client_type"),r.getString("material"),r.getInt("bill_number"),r.getString("date"),r.getDouble("weight_count"),r.getDouble("piece_price"),r.getDouble("amount"),r.getDouble("paid_amount"));
 //                lst.add(item);
-                Optional<Client> existingClient=lst.stream().filter(e->e.getId()==clientId).findFirst();
 
-                if (existingClient.isPresent()){
-                    client=existingClient.get();
-                }else {
-                    client= new Client(clientId,clientName,clientType);
-                    lst.add(client);
-                }
-                ClientsItem clientsItem= new ClientsItem(material,billNumber,datee,weightCount,piecePrice,amount,paidAmount);
-                client.getClientsItems().add(clientsItem);
+
+                SoldToday cl= new SoldToday(clientId,clientName,clientType,material,billNumber,datee,weightCount,piecePrice,amount,paidAmount);
+                lst.add(cl);
             }
             resultSet.close();
 
