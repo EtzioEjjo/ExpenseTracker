@@ -1,0 +1,42 @@
+.boarderBane_Container{
+-fx-background-color:#6495ED;
+}
+.boarderBane_Container Text{
+-fx-weight:700;
+-fx-font-size:1.2em;
+}
+.boarderBane_Container Label{
+-fx-pref-width:100;
+-fx-padding:5 5 5 5 ;
+-fx-background-color:#FFFFFF;
+-fx-alignment:center;
+}
+.title{
+-fx-pref-width:200;
+-fx-pref-height:70;
+-fx-background-color:#DC143C;
+-fx-font-size:2.5em;
+}
+
+.boarderBane_Container TextField{
+-fx-padding:6;
+-fx-background-color:#FFFFFF;
+}
+
+
+
+.add_ClientsInfo{
+-fx-alignment:CENTER-RIGHT;
+-fx-spacing:3;
+
+}
+Button:hover{
+-fx-cursor:hand;
+
+}
+
+.summation_Label{
+-fx-font-size:1.6em;
+-fx-alignment:center;
+
+}

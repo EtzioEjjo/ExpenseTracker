@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../Styles/PeopleClient.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abumusaapplication.Controllers.BalanceInquiryController">
+   <children>
+      <HBox alignment="CENTER" layoutX="333.0" layoutY="8.0" prefHeight="100.0" prefWidth="1000.0" styleClass="boarderBane_Container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="title" text="كشف الارصدة" />
+         </children>
+      </HBox>
+      <TableView fx:id="table_TableView" layoutX="227.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="800.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+        <columns>
+            <TableColumn fx:id="idCol" prefWidth="88.0" text="الرقم" />
+            <TableColumn fx:id="nameCol" prefWidth="205.0" text="الاسم" />
+            <TableColumn fx:id="amountCol" prefWidth="180.0" text="المبلغ" />
+          <TableColumn fx:id="paid_amount_col" prefWidth="172.0" text="الدفعات" />
+          <TableColumn fx:id="fundsCol" prefWidth="154.0" text="الرصيد الحالي" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

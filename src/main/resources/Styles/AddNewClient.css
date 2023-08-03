@@ -1,0 +1,21 @@
+
+.main_container{
+-fx-background-color:#EEEEEE;
+}
+Text{
+-fx-fill:#000000;
+-fx-weight:bold;
+-fx-font-size:1.2em;
+-fx-padding:5 5 5 0;
+-fx-pref-width:200;
+}
+TextField{
+-fx-pref-width:300;
+-fx-font-size:1.4em;
+-fx-background-color:#FFFFFF;
+}
+
+Button{
+-fx-pref-width:100;
+-fx-font-size:1.1em;
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../Styles/PeopleClient.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abumusaapplication.Controllers.PeopleClientsController">
+   <children>
+      <BorderPane layoutX="47.0" layoutY="14.0" prefHeight="100.0" prefWidth="850.0" styleClass="boarderBane_Container" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <Label prefHeight="17.0" prefWidth="165.0" styleClass="title" text="شاشة العملاء" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <AnchorPane prefHeight="100.0" prefWidth="297.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text layoutX="158.384765625" layoutY="16.94921875" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم العميل" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0" />
+                  <Text layoutX="157.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم العميل :" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="50.0" />
+                  <TextField fx:id="client_name" layoutX="6.0" layoutY="45.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="209.0" AnchorPane.topAnchor="50.0" />
+                  <Label fx:id="client_id" layoutX="102.0" layoutY="17.0" text="500" AnchorPane.topAnchor="10.0" />
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+      <TableView fx:id="table_TableView" layoutX="325.0" layoutY="271.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="350.0" prefWidth="840.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="230.0">
+        <columns>
+            <TableColumn fx:id="name_Col" prefWidth="150.0" text="البيان" />
+            <TableColumn fx:id="billNum_Col" prefWidth="100.0" text="رقم الفاتورة" />
+            <TableColumn fx:id="date_Col" prefWidth="150.0" text="تاريخ المستند" />
+            <TableColumn fx:id="weight_Col" prefWidth="100.0" text="العدد/الوزن" />
+            <TableColumn fx:id="price_Col" prefWidth="100.0" text="سعر القطعة" />
+            <TableColumn fx:id="amount_Col" prefWidth="100.0" text="المبلغ" />
+          <TableColumn fx:id="paidAmount_Col" prefWidth="150.0" text="دفعه" />
+          <TableColumn fx:id="funds_Col" prefWidth="150.0" text="الرصيد" />
+        </columns>
+      </TableView>
+      <Button fx:id="addNewClient_Button" layoutX="732.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="إضافة عميل جديد" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="112.0" />
+      <HBox focusTraversable="true" layoutX="434.0" layoutY="125.0" prefHeight="90.0" prefWidth="840.0" styleClass="add_ClientsInfo" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="139.0">
+         <children>
+            <Button fx:id="addNewItem_Button" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="إضافة" />
+
+
+            <TextField fx:id="paidAmount_TextField" nodeOrientation="RIGHT_TO_LEFT" promptText="0.0" />
+            <Text focusTraversable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="دفعه" />
+            <TextField fx:id="amount_TextField" nodeOrientation="RIGHT_TO_LEFT" promptText="0.0" />
+            <Text layoutX="456.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="المبلغ" />
+            <TextField fx:id="piecePrice_Button" layoutX="397.0" layoutY="43.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="91.0" promptText="0.0" />
+            <Text layoutX="549.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="سعر القطعة" />
+            <TextField fx:id="number_weight_TextField" layoutX="609.0" layoutY="43.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="89.0" promptText="0.0" />
+            <Text layoutX="762.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="العدد/الوزن" />
+            <TextField fx:id="billNumber_TextField" layoutX="821.0" layoutY="43.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="90.0" promptText="0" />
+            <Text layoutX="974.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم الفاتورة" />
+            <TextField fx:id="materialName_TextField" nodeOrientation="RIGHT_TO_LEFT" promptText="-------" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="البيان" />
+         </children>
+      </HBox>
+      <Button fx:id="deleteClient_Button" layoutX="14.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="حذف العميل" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="112.0" />
+      <VBox layoutX="14.0" layoutY="580.0" prefHeight="120.0" prefWidth="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="50.0">
+               <children>
+                  <Label fx:id="amountSum_Label" prefHeight="28.0" prefWidth="115.0" styleClass="summation_Label" textAlignment="CENTER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="مجموع المبلغ" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="50.0">
+               <children>
+                  <Label fx:id="paidAmountSum_Label" prefHeight="28.0" prefWidth="115.0" styleClass="summation_Label" textAlignment="CENTER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="مجموع الدفعات" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="50.0">
+               <children>
+                  <Label fx:id="funds_Label" prefHeight="28.0" prefWidth="115.0" styleClass="summation_Label" textAlignment="CENTER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="الرصيد النهائي" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="397.0" layoutY="109.0" mnemonicParsing="false" text="Button" />
+      <HBox layoutX="229.0" layoutY="590.0" prefHeight="100.0" prefWidth="849.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="851.0">
+               <children>
+                  <Button fx:id="prevClient_Button" layoutX="715.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="العميل السابق" AnchorPane.topAnchor="14.0" />
+                  <Button fx:id="nextClient_Button" layoutX="597.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="العميل التالي" AnchorPane.topAnchor="14.0" />
+                  <Button fx:id="firstClient_Button" layoutX="715.0" layoutY="52.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="اول عميل" AnchorPane.topAnchor="56.0" />
+                  <Button fx:id="lastClient_Button" layoutX="597.0" layoutY="52.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="اخر عميل" AnchorPane.topAnchor="56.0" />
+                  <Button fx:id="deleteClientItemRow_Button" layoutX="82.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="100.0" text="حذف السطر" AnchorPane.topAnchor="14.0" />
+                  <Button fx:id="print_Button" layoutX="82.0" layoutY="52.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="طباعة" AnchorPane.topAnchor="56.0" />
+                  <Button fx:id="todaysSales_Button" layoutX="368.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="185.0" text="عرض حركة اليوم" AnchorPane.topAnchor="14.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

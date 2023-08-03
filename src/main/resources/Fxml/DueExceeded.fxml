@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abumusaapplication.Controllers.DueExceededController">
+   <children>
+      <HBox alignment="CENTER" layoutX="214.0" layoutY="14.0" prefHeight="100.0" prefWidth="800.0" styleClass="boarderBane_Container" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="400.0" text="قائمة الحسابات المتأخرة بالدفع">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+
+         </children>
+      </HBox>
+      <TableView fx:id="table_TableView" layoutX="271.0" layoutY="118.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="500.0" prefWidth="900.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="125.0">
+        <columns>
+          <TableColumn fx:id="id_Col" prefWidth="102.0" text="الرقم" />
+          <TableColumn fx:id="name_Col" minWidth="9.0" prefWidth="247.0" text="الاسم" />
+            <TableColumn fx:id="funds_Col" prefWidth="170.0" text="الرصيد" />
+            <TableColumn fx:id="lastPaymentDate_Col" prefWidth="137.0" text="تاريخ اخر دفعة" />
+            <TableColumn fx:id="afterMonthDate_Col" prefWidth="130.0" text="التاريخ بعد شهر" />
+            <TableColumn fx:id="clientStatus_Col" prefWidth="113.0" text="حال العميل" />
+        </columns>
+      </TableView>
+      <Button fx:id="print_Button" layoutX="38.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="طباعة" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="862.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="exist_Button" layoutX="38.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="خروج" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="862.0" AnchorPane.topAnchor="60.0" />
+   </children>
+</AnchorPane>
