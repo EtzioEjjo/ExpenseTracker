@@ -59,7 +59,9 @@ ExpenseTracker is a robust desktop application designed to empower vendors in ef
 
 - SQLite
 
-- JDBC 
+- JDBC
 
 - Maven
+
+
 
