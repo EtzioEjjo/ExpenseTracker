@@ -19,7 +19,10 @@ public class AddNewClientController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         clientTypes=Arrays.stream(ClientTypes.values()).map(e->e.toString()).toArray(size->new String[size]);
+
+        /*INTITIALIZING COMBOBOX*/
         accountType_ComboBox.getItems().addAll(clientTypes);
+        accountType_ComboBox.getSelectionModel().selectFirst();
         setComboBoxCellFactory();
 
         addClient_Button.setOnAction(e->{
@@ -66,7 +69,7 @@ public class AddNewClientController implements Initializable {
                     }else{
                         setText(item);
                         setAlignment(Pos.TOP_RIGHT);
-                        setStyle("-fx-border-width:1px; -fx-border-color:#e0e0e0; -fx-font-size:1.2em;");
+                        setStyle("-fx-border-width:1px; -fx-border-color:#e0e0e0; -fx-font-size:1.2em; -fx-alignment:center-right;");
 
 
 

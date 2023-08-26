@@ -9,8 +9,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 //        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/IronWeights.fxml"));
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/PeopleClients.fxml"));
-//        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/AddNewClient.fxml"));
+//        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/PeopleClients.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/AddNewClient.fxml"));
 //        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/SoldToday.fxml"));
 
 //        FXMLLoader loader= new FXMLLoader(getClass().getResource("/Fxml/BalanceInquiry.fxml"));
