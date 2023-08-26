@@ -47,6 +47,7 @@ private static  String CONNECTION_STRING="jdbc:sqlite:C:/Users/Home/IdeaProjects
                 double amount = resultSet.getDouble("amount");
                 double paidAmount = resultSet.getDouble("paid_amount");
 
+
 //                item=new Client(r.getInt("id"),r.getString("name"),r.getString("client_type"),r.getString("material"),r.getInt("bill_number"),r.getString("date"),r.getDouble("weight_count"),r.getDouble("piece_price"),r.getDouble("amount"),r.getDouble("paid_amount"));
 //                lst.add(item);
 
@@ -161,7 +162,7 @@ ObservableSet<String> set=null;
     public static boolean addClientsItem(int id,String mat,int bill,String date,double weight,double piecePrice,double amount,double paidAmount){
         boolean addedNewItem=false;
         try(Connection conn=DriverManager.getConnection(CONNECTION_STRING);
-        PreparedStatement ADD_CLIENT_ITEM=conn.prepareStatement("INSERT INTO Client_Items values(?,?,?,?,?,?,?,?)")){
+        PreparedStatement ADD_CLIENT_ITEM=conn.prepareStatement("INSERT INTO Client_Items (id,material,bill_number,date,weight_count,piece_price,amount,paid_amount) values(?,?,?,?,?,?,?,?)")){
             ADD_CLIENT_ITEM.setInt(1,id);
             ADD_CLIENT_ITEM.setString(2,mat);
             ADD_CLIENT_ITEM.setInt(3,bill);
@@ -190,7 +191,7 @@ ObservableSet<String> set=null;
             GET_CLIENTS_ITEMS.setInt(1,id);
             ResultSet r= GET_CLIENTS_ITEMS.executeQuery();
             while (r.next()){
-                item= new ClientsItem(r.getString("material"),r.getInt("bill_number"),r.getString("date"),r.getDouble("weight_count"),r.getDouble("piece_price"),r.getDouble("amount"),r.getDouble("paid_amount"));
+                item= new ClientsItem(r.getString("material"),r.getInt("bill_number"),r.getString("date"),r.getDouble("weight_count"),r.getDouble("piece_price"),r.getDouble("amount"),r.getDouble("paid_amount"),r.getInt("col_number"));
                 list.add(item);
             }
 
@@ -231,18 +232,26 @@ ObservableSet<String> set=null;
 
         }
     }
-    public static boolean deleteClientItem(ClientsItem item){
-
-        System.out.println(item.getPaidAmount());
+    public static int getHighestColumnNumber(){
+            int num=-1;
         try(Connection conn= DriverManager.getConnection(CONNECTION_STRING);
-            PreparedStatement DELETE_CLIENT_ITEM=conn.prepareStatement("DELETE FROM Client_Items WHERE material=? AND bill_number=? AND date=? AND weight_count=? AND piece_price=? AND amount=? AND paid_amount=?")){
-            DELETE_CLIENT_ITEM.setString(1,item.getMaterialName());
-            DELETE_CLIENT_ITEM.setDouble(2,item.getBillNumber());
-            DELETE_CLIENT_ITEM.setString(3, item.getDate());
-            DELETE_CLIENT_ITEM.setDouble(4,item.getWeight_Number());
-            DELETE_CLIENT_ITEM.setDouble(5,item.getPiecePrice());
-            DELETE_CLIENT_ITEM.setDouble(6,item.getAmount());
-            DELETE_CLIENT_ITEM.setDouble(7,item.getPaidAmount());
+            PreparedStatement HIGHEST_COL_NUM= conn.prepareStatement("SELECT MAX(col_number) FROM Client_Items")){
+            ResultSet r=HIGHEST_COL_NUM.executeQuery();
+            if(r.next()){
+                num=r.getInt(1);
+
+            }
+            r.close();
+        }catch (SQLException e){
+            System.out.println("couldnt get highest column number");
+        }
+        return num;
+    }
+    public static boolean deleteClientItem(int item){
+
+        try(Connection conn= DriverManager.getConnection(CONNECTION_STRING);
+            PreparedStatement DELETE_CLIENT_ITEM=conn.prepareStatement("DELETE FROM Client_Items WHERE col_number=?")){
+            DELETE_CLIENT_ITEM.setInt(1,item);
             int affectedRow=DELETE_CLIENT_ITEM.executeUpdate();
             if (affectedRow>0){
             System.out.println("row has been deleted successfully");

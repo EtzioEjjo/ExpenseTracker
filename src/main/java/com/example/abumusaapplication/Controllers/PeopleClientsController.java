@@ -44,6 +44,7 @@ public class PeopleClientsController implements Initializable {
     public TableColumn<ClientsItem,Double> amount_Col;
     public TableColumn<ClientsItem,Double> paidAmount_Col;
     public TableColumn<ClientsItem,Double> funds_Col;
+
     public TableView<ClientsItem> table_TableView;
     public Button deleteClient_Button;
     public Label amountSum_Label;
@@ -56,6 +57,7 @@ public class PeopleClientsController implements Initializable {
     public Button lastClient_Button;
     public Button print_Button;
     public Button todaysSales_Button;
+    public TableColumn<ClientsItem,Integer> colNumber_col;
     ObservableList<ClientsItem> tableData= FXCollections.observableArrayList();
     ObservableList<String>clientsNamesForPrevnNextButton=FXCollections.observableArrayList();
     IntegerProperty firstOrLastClient;
@@ -64,6 +66,9 @@ public class PeopleClientsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+
+        /*Settings*/
         buttonsTraversal();
         defaultValues();
         setTableCellFactory();
@@ -231,53 +236,25 @@ public class PeopleClientsController implements Initializable {
 
     }
 
-//    private String getLastRowOfFunds(TableView tableView){
-//        if (!tableView.getItems().isEmpty()) {
-//            int lastIndex = tableView.getItems().size();
-//            ClientsItem clientsItem = (ClientsItem) tableView.getItems().get(lastIndex);
-//            return Double.toString(clientsItem.getFunds());
-//        }
-//
-//    return null;
-//    }
-//    private String calculatePaidAmountSum(TableView tableView){
-//        ObservableList<ClientsItem > data =tableView.getItems();
-//        double sum=0;
-//        for (ClientsItem item:data){
-//            sum+=item.getPaidAmount();
-//        }
-//        return Double.toString(sum);
-//
-//    }
-//
-//    private String calculateAmountSum(TableView tableView){
-//        ObservableList<ClientsItem> data= tableView.getItems();
-//        double sum=0;
-//        for (ClientsItem item:data){
-//            sum+= item.getAmount();
-//
-//        }
-//        return Double.toString(sum);
-//
-//
-//    }
 
     private void handleDeletionButton(KeyEvent keyEvent, ActionEvent action){
         ClientsItem clientItem=table_TableView.getSelectionModel().getSelectedItem();
+        int selectedrow=table_TableView.getSelectionModel().getSelectedItem().getCol_num();
+        System.out.println(selectedrow +"selected row");
         if (keyEvent!=null){
         if(keyEvent.getCode()== KeyCode.DELETE){
-        deleteItemRow(clientItem);}
+        deleteItemRow(selectedrow,clientItem);}
         } else if (action!=null) {
-            deleteItemRow(clientItem);
+            deleteItemRow(selectedrow,clientItem);
         }
     }
-    private void deleteItemRow(ClientsItem clientItem){
-        if(clientItem!=null){
-            boolean isRowDeletedFromDatabase=DatabaseDriver.deleteClientItem(clientItem);
+    private void deleteItemRow(int clientItemRowId,ClientsItem clientItem){
+
+            boolean isRowDeletedFromDatabase=DatabaseDriver.deleteClientItem(clientItemRowId);
             if (isRowDeletedFromDatabase){
                 tableData.remove(clientItem);
                 table_TableView.refresh();}
-        }
+
 
     }
 
@@ -290,6 +267,8 @@ public class PeopleClientsController implements Initializable {
         price_Col.setCellValueFactory(f-> f.getValue().piecePriceProperty().asObject());
         amount_Col.setCellValueFactory(f-> f.getValue().amountProperty().asObject());
         paidAmount_Col.setCellValueFactory(f->f.getValue().paidAmountProperty().asObject());
+        colNumber_col.setCellValueFactory(f->f.getValue().col_numProperty().asObject());
+
         funds_Col.setCellValueFactory(f->{
             ClientsItem clientsItem=f.getValue();
             int rowIndex=f.getTableView().getItems().indexOf(clientsItem);

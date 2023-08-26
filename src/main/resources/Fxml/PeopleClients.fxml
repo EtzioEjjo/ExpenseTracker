@@ -41,6 +41,7 @@
             <TableColumn fx:id="amount_Col" prefWidth="100.0" text="المبلغ" />
           <TableColumn fx:id="paidAmount_Col" prefWidth="150.0" text="دفعه" />
           <TableColumn fx:id="funds_Col" prefWidth="150.0" text="الرصيد" />
+            <TableColumn fx:id="colNumber_col" prefWidth="75.0" text="id" />
         </columns>
       </TableView>
       <Button fx:id="addNewClient_Button" layoutX="732.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="إضافة عميل جديد" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="112.0" />
