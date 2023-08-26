@@ -2,7 +2,7 @@
 <h1> <p align="center"> ExpenseTracker </p></h1>
 <br>
 
-ExpenseTracker is a desktop application developed to help vendors keep track of their customers ,goods and sales.
+ExpenseTracker is a robust desktop application designed to empower vendors in efficiently managing their customers.ExpenseTracker simplifies the process of tracking expenses, monitoring goods, and maintaining sales records.
 
 # About The  Project:-
 
@@ -47,5 +47,18 @@ ExpenseTracker is a desktop application developed to help vendors keep track of 
 
 
 ![image](https://github.com/EtzioEjjo/demo1/assets/59229723/3e549b6b-e749-4b08-be9b-ab95891bcb1f)
+
+
+
+
+# Built With :-
+
+- Java
+
+- Javafx
+
+- SQLite
+
+- JDBC 
 
 
