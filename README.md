@@ -27,26 +27,24 @@ ExpenseTracker is a robust desktop application designed to empower vendors in ef
 - The vendor can view a summary of all of his customers
 
 
-
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/caa8a391-e0d9-41fb-b04f-b2f2d1a73a1b)
-
-
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/670469d0-7304-478f-aea1-990d0751de59)
+![Abu1](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/b39ef65d-d342-49dd-bbab-04b792fe6387)
 
 
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/09dca66b-4010-49f2-8d5c-a317c98952db)
+![Abu2](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/c5965d04-4251-439d-8baa-078eacc76119)
 
 
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/6dacb05d-5ecd-4f47-9519-1b132be16c4c)
+![Abu3](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/9a349b46-f634-4086-8b70-29d5795e2622)
 
 
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/555f4e4e-0ba8-4b04-ab3c-c0d7b6a7f7bd)
+![Abu4](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/6ba337dd-39a2-48c3-9bf3-0678e4bfcdaa)
 
 
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/da589ddb-2f40-4f16-9817-d0c98434f329)
+![Abu5](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/c75a4d57-d628-46cb-8ba4-901bcab9f777)
 
 
-![image](https://github.com/EtzioEjjo/demo1/assets/59229723/3e549b6b-e749-4b08-be9b-ab95891bcb1f)
+![Abu6](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/f01fd717-6bd5-4eb0-a82d-8638e9c102b4)
+
+
 
 
 
