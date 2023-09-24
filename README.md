@@ -31,9 +31,6 @@ ExpenseTracker is a robust desktop application designed to empower vendors in ef
 
 
 
-![Abu3](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/9a349b46-f634-4086-8b70-29d5795e2622)
-
-
 
 ![Abu4](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/6ba337dd-39a2-48c3-9bf3-0678e4bfcdaa)
 
@@ -48,6 +45,10 @@ ExpenseTracker is a robust desktop application designed to empower vendors in ef
 
 
 ![Abu2](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/c5965d04-4251-439d-8baa-078eacc76119)
+
+
+
+![Abu3](https://github.com/EtzioEjjo/ExpenseTracker/assets/59229723/9a349b46-f634-4086-8b70-29d5795e2622)
 
 
 
